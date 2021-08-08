@@ -18,6 +18,7 @@ brew install sigstore/tap/<formula>
 | Repository | Formula | Description |
 | ---------- | ------- | ----------- |
 | [cosign](https://github.com/sigstore/cosign) | [formula](Formula/cosign.rb) | Container Signing, Verification and Storage in an OCI registry |
+| [rekor-cli](https://github.com/sigstore/rekor) | [formula](Formula/rekor-cli.rb) | Secure Supply Chain - Transparency Log |
 
 ## Documentation
 
