@@ -3,27 +3,31 @@
 
 class Cosign < Formula
   desc "Container Signing, Verification and Storage in an OCI registry"
-  homepage "https://sigstore.dev/"
-  version "1.1.0"
+  homepage "https://github.com/sigstore/cosign"
+  version "1.2.0"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git"
   bottle :unneeded
 
-  uses_from_macos "pcsc-lite" if OS.mac?
+  on_macos do
+    depends_on "pcsc-lite"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-amd64"
-    sha256 "786f2e084746581ac09ff4052bfbf4a8ba595e1e4d1602240b7a20a12780fd0b"
+    if Hardware::CPU.intel?
+      url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-amd64"
+      sha256 "974b33f61004e235db9c5f57edb105ae0c1ff28b0bb4193a399f6b3bc9ac66fb"
+    end
+
+    if Hardware::CPU.arm?
+      url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-arm64"
+      sha256 "c86e50ede69216d4d3f45523c3f9aef265192290a49ee92bc1ffc73de7bbb131"
+    end
   end
 
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-arm64"
-    sha256 "953b26dca1dc208360ae5ff8b783a966c24e0894b4f39ad3e09818d77aa73fd0"
-  end
-
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-amd64"
-    sha256 "c0b66f6948361f7f2c8c569d82d9471f36dd8354cf43f6bba6e578b31944127b"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-amd64"
+      sha256 "690e9d6220aa715b61e332a0efefb60f4f4889cb8c0d0195d28a406425d617f0"
+    end
   end
 
   def install
