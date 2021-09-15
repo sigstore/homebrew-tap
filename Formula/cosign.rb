@@ -3,7 +3,7 @@
 
 class Cosign < Formula
   desc "Container Signing, Verification and Storage in an OCI registry"
-  homepage "https://sigstore.dev/"
+  homepage "https://github.com/sigstore/cosign"
   version "1.2.0"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git"
