@@ -7,7 +7,6 @@ class RekorCli < Formula
   version "0.3.0"
   license "Apache-2.0"
   head "https://github.com/sigstore/rekor.git"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
