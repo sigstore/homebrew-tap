@@ -7,7 +7,6 @@ class Cosign < Formula
   version "1.2.1"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git"
-  bottle :unneeded
 
   on_macos do
     depends_on "pcsc-lite"
