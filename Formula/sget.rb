@@ -4,29 +4,29 @@
 class Sget < Formula
   desc "Automatic verification of signatures with our binary transparency log, Rekor"
   homepage "https://sigstore.dev"
-  version "1.5.2"
+  version "1.6.0"
   license "Apache-2.0"
-  head "https://github.com/sigstore/cosign.git", tag: "v1.5.2"
+  head "https://github.com/sigstore/cosign.git", tag: "v1.6.0"
 
   if Hardware::CPU.intel?
     url "https://github.com/sigstore/cosign/releases/download/v#{version}/sget-darwin-amd64"
-    sha256 "c4dedbd20b7d26a068b90a170ef23640739381a28397d5b73c0ebaa8f4535f95"
+    sha256 "c06fbc2bea90b55636e2b460d2bb6f06c239ba9f1e93e5bbb25beaa5084d210b"
   end
 
   if Hardware::CPU.arm?
     url "https://github.com/sigstore/cosign/releases/download/v#{version}/sget-darwin-arm64"
-    sha256 "c271217fb85c2ab5ddea571865ddbca5b04ca8a04e7382c60ec080f014a45765"
+    sha256 "61d6179e55b326fbe4f72dd82a841e08735df3ecc6f6b9de8b0b0f67fbb3611a"
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/cosign/releases/download/v#{version}/sget-linux-amd64"
-      sha256 "d466fc955b2645c9269ff461b3bb843aa8795131b11d4c232ac2bebccebef7f4"
+      sha256 "3241c236571b9a2fa6cd1df88a84a5b09a4d6fc58155020518df93813cfd8e77"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/cosign/releases/download/v#{version}/sget-linux-arm64"
-      sha256 "8b2d4612e4902be873f041af6e0a6d58c7c4c386d51643d7ea287589e5e39ebc"
+      sha256 "d650889a5d48e4e3865b53f6a0b995911ccdffc8b79283fd77171167c665158b"
     end
   end
 
