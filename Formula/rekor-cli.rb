@@ -4,31 +4,31 @@
 class RekorCli < Formula
   desc "Secure Supply Chain - Transparency Log"
   homepage "https://sigstore.dev"
-  version "0.12.0"
+  version "0.12.1"
   license "Apache-2.0"
-  head "https://github.com/sigstore/rekor.git", tag: "v0.12.0"
+  head "https://github.com/sigstore/rekor.git", tag: "v0.12.1"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/rekor/releases/download/v#{version}/rekor-cli-darwin-amd64"
-      sha256 "477f0b98a5d08ca5b9841c741a8835555edb1f1f8120b5392529d4197067f466"
+      sha256 "5c30eefadadf842fe780afa054901fe35def39841361feaa44c558d420a307c0"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/rekor/releases/download/v#{version}/rekor-cli-darwin-arm64"
-      sha256 "ec543ec0f5640cac45cf81222196ed78217a76fff904276a50be168fabc48c2b"
+      sha256 "1227bc521290ecc7a6897ad16569f260d01c38908f4210e5c5d1a6033b635e80"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/rekor/releases/download/v#{version}/rekor-cli-linux-amd64"
-      sha256 "23c9baefe12b28879275f5aa84dbe9cd734d67ba42bf9bbb28a3eedbf1ed2dd4"
+      sha256 "84c9141b0d04f90d4a75bb5c0cf2e3de68ce3c875dfb0ccc083054a46a4859ac"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/rekor/releases/download/v#{version}/rekor-cli-linux-arm64"
-      sha256 "0d589681e61661d8a14f074ba66993ffa1d038cb2846beed6ceefd1e3029a5d9"
+      sha256 "440a37139e96ba242e5986ca662d30820730f5252d73b59f8e71040ead92964f"
     end
   end
 
