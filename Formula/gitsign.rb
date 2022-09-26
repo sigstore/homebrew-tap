@@ -4,33 +4,33 @@
 class Gitsign < Formula
   desc "Keyless Git signing using Sigstore"
   homepage "https://sigstore.dev"
-  version "0.3.0"
+  version "0.3.1"
   license "Apache-2.0"
-  head "https://github.com/sigstore/gitsign.git", tag: "v0.3.0"
+  head "https://github.com/sigstore/gitsign.git", tag: "v0.3.1"
 
   depends_on "sigstore/tap/gitsign-credential-cache"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/gitsign/releases/download/v#{version}/gitsign_#{version}_darwin_amd64"
-      sha256 "db13a32e2c4915cd11a2a01c5b93daaaee6db1b64c66d310430ed3e2d167701e"
+      sha256 "e5fa99e806e6c859c99deefd83283dfbdf27a2ba1192a9c7b30c2fb46f888b18"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/gitsign/releases/download/v#{version}/gitsign_#{version}_darwin_arm64"
-      sha256 "24c02598bbf75833f17a6bde28aca97b27a19d779ea55c3dbd72a750195431be"
+      sha256 "9873da5c6390f6934b88106a0a42fe4be45cd04cfd86c5fbb866193702282475"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/gitsign/releases/download/v#{version}/gitsign_#{version}_linux_amd64"
-      sha256 "2445c1b443b95a3652ab9af074f8d13fc9a45a3c98ed0c7ef4f299f2f2ca5c8a"
+      sha256 "9d0b843aa5237ed2d7ba1c29b03d384c26c0585bae41c22d846ae8d8fc88fd68"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/gitsign/releases/download/v#{version}/gitsign_#{version}_linux_arm64"
-      sha256 "a21f8d6b7624975c0d9cfe278b01907c1daa3b62168f147fab544738ae9c9cf7"
+      sha256 "8f6cfdf162626b167f237054a57d704d576a0e76c3bfc5ff40d31dd51c6b383a"
     end
   end
 
