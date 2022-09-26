@@ -11,9 +11,12 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
+      - run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@a042fcf3dde3999be7c8df3e96933dcc848a041d # master branch no releases
+        uses: Homebrew/actions/setup-homebrew@master # master branch no releases
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
