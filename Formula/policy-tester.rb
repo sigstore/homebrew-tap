@@ -16,7 +16,7 @@ class PolicyTester < Formula
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/policy-controller/releases/download/v#{version}/tester-darwin-arm64"
-      sha256 "54aea12d46dcae7929aba260a88bb3e548f024a8547021788bfc744bf4653e8b"
+      sha256 "11d13e210e1349bf345566ceda53fb6da6f6914de8b6fdf5206de17ae11839e6"
     end
   end
 
@@ -28,7 +28,7 @@ class PolicyTester < Formula
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/policy-controller/releases/download/v#{version}/tester-linux-arm64"
-      sha256 "11d13e210e1349bf345566ceda53fb6da6f6914de8b6fdf5206de17ae11839e6"
+      sha256 "54aea12d46dcae7929aba260a88bb3e548f024a8547021788bfc744bf4653e8b"
     end
   end
 
