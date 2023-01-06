@@ -44,7 +44,11 @@ class Cosign < Formula
   def install
     cpu = Hardware::CPU.intel? ? "amd64" : "arm64"
     os = OS.mac? ? "darwin" : "linux"
-    bin.install "cosign-#{os}-#{cpu}" => "cosign"
+    if build.with? "linux-piv-pkcs11"
+      bin.install "cosign-#{os}-pivkey-pkcs11key-#{cpu}" => "cosign"
+    else
+      bin.install "cosign-#{os}-#{cpu}" => "cosign"
+    end
   end
 
   test do
