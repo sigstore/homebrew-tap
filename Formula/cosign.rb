@@ -8,6 +8,8 @@ class Cosign < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", tag: "v1.13.1"
 
+  option "with-linux-piv-pkcs11", "Download cosign linux binary with piv/pkcs11 enabled"
+
   on_macos do
     depends_on "pcsc-lite"
 
@@ -24,8 +26,13 @@ class Cosign < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-amd64"
-      sha256 "a50651a67b42714d6f1a66eb6773bf214dacae321f04323c0885f6a433051f95"
+      if build.with? "linux-piv-pkcs11"
+        url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-pivkey-pkcs11key-amd64"
+        sha256 "31b63f7e9ca88bb16f886962a46973905de0c4f07ff2f27cc71c099c81c91c6f"
+      else
+        url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-amd64"
+        sha256 "a50651a67b42714d6f1a66eb6773bf214dacae321f04323c0885f6a433051f95"
+      end
     end
 
     if Hardware::CPU.arm?
