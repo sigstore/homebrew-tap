@@ -4,9 +4,9 @@
 class Cosign < Formula
   desc "Container Signing, Verification and Storage in an OCI registry"
   homepage "https://sigstore.dev"
-  version "1.13.1"
+  version "2.0.0"
   license "Apache-2.0"
-  head "https://github.com/sigstore/cosign.git", tag: "v1.13.1"
+  head "https://github.com/sigstore/cosign.git", tag: "v2.0.0"
 
   option "with-linux-piv-pkcs11", "Download cosign linux binary with piv/pkcs11 enabled"
 
@@ -15,12 +15,12 @@ class Cosign < Formula
 
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-amd64"
-      sha256 "1d164b8b1fcfef1e1870d809edbb9862afd5995cab63687a440b84cca5680ecf"
+      sha256 "d2c8fc0edb42a1e9745da1c43a2928cee044f3b8a1b8df64088a384c7e6f5b5d"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-arm64"
-      sha256 "02bef878916be048fd7dcf742105639f53706a59b5b03f4e4eaccc01d05bc7ab"
+      sha256 "9d7821e1c05da4b07513729cb00d1070c9a95332c66d90fa593ed77d8c72ca2a"
     end
   end
 
@@ -28,16 +28,16 @@ class Cosign < Formula
     if Hardware::CPU.intel?
       if build.with? "linux-piv-pkcs11"
         url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-pivkey-pkcs11key-amd64"
-        sha256 "31b63f7e9ca88bb16f886962a46973905de0c4f07ff2f27cc71c099c81c91c6f"
+        sha256 "62544d993b72e9cff572d6b55e944fde9dba2511356f98114e1c7260598cf50f"
       else
         url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-amd64"
-        sha256 "a50651a67b42714d6f1a66eb6773bf214dacae321f04323c0885f6a433051f95"
+        sha256 "169a53594c437d53ffc401b911b7e70d453f5a2c1f96eb2a736f34f6356c4f2b"
       end
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-arm64"
-      sha256 "a7a79a52c7747e2c21554cad4600e6c7130c0429017dd258f9c558d957fa9090"
+      sha256 "8132cb2fb99a4c60ba8e03b079e12462c27073028a5d08c07ecda67284e0c88d"
     end
   end
 
