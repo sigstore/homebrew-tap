@@ -4,31 +4,31 @@
 class PolicyTester < Formula
   desc "CLI for validating an image against a ClusterImagePolicy"
   homepage "https://sigstore.dev"
-  version "0.4.0"
+  version "0.7.0"
   license "Apache-2.0"
-  head "https://github.com/sigstore/policy-controller.git", tag: "v0.4.0"
+  head "https://github.com/sigstore/policy-controller.git", tag: "v0.7.0"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/policy-controller/releases/download/v#{version}/tester-darwin-amd64"
-      sha256 "23f3d19c09cffdc84fb0d060fefc31f1075be98824be386e4bd170bec887f9fd"
+      sha256 "3c8dd03c7da5e6c6e506c061a958c26cb199c5d2bb95216a887dd8645e1941d6"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/policy-controller/releases/download/v#{version}/tester-darwin-arm64"
-      sha256 "11d13e210e1349bf345566ceda53fb6da6f6914de8b6fdf5206de17ae11839e6"
+      sha256 "f782f52270f614d007240839bc3b91767b18aa939b9f3ca9dbdd2094c2943a53"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/policy-controller/releases/download/v#{version}/tester-linux-amd64"
-      sha256 "39deceb663de852b8ac27ba816449fb8e14ca10532657be35b7bdd5829241f3e"
+      sha256 "e67ca887c5df0c6d78a67b45f0adc6b9fc8dd43e1f12a0fbbe45977ee243fe78"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/policy-controller/releases/download/v#{version}/tester-linux-arm64"
-      sha256 "54aea12d46dcae7929aba260a88bb3e548f024a8547021788bfc744bf4653e8b"
+      sha256 "50cbc03181ccac4392da4f6651d5bc93795cf8ec61b1d7953e1a875061623efe"
     end
   end
 
