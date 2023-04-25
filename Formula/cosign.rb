@@ -4,9 +4,9 @@
 class Cosign < Formula
   desc "Container Signing, Verification and Storage in an OCI registry"
   homepage "https://sigstore.dev"
-  version "2.0.1"
+  version "2.0.2"
   license "Apache-2.0"
-  head "https://github.com/sigstore/cosign.git", tag: "v2.0.1"
+  head "https://github.com/sigstore/cosign.git", tag: "v2.0.2"
 
   option "with-linux-piv-pkcs11", "Download cosign linux binary with piv/pkcs11 enabled"
 
@@ -15,12 +15,12 @@ class Cosign < Formula
 
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-amd64"
-      sha256 "a22da39c4e290d3ae5a2a882476daf84b46ac19acd0b01aac8e173d7f57b8eae"
+      sha256 "0f51cbe19a315b919e87042f0485331821722ecb7fce22cc1b880ed4833fc8b0"
     end
 
     if Hardware::CPU.arm?
       url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-darwin-arm64"
-      sha256 "95774f0f8d0b1674606893e3837ecd3f01d65c0ea4a71409b089307ffd1f9bed"
+      sha256 "55242a52ebca43dfb133d0fe26e11546bfa4571addd6852d782c119d74deade1"
     end
   end
 
@@ -28,20 +28,20 @@ class Cosign < Formula
     if Hardware::CPU.intel?
       if build.with? "linux-piv-pkcs11"
         url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-pivkey-pkcs11key-amd64"
-        sha256 "57b48a40095688e3cf00b786ec3cd662bbc88c0154f8077f8a19d423208c5440"
+        sha256 "4e97e455a48a0e0751a16b2f84a67b527348df39dd6ae23c96b57b765b318084"
       else
         url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-amd64"
-        sha256 "924754b2e62f25683e3e74f90aa5e166944a0f0cf75b4196ee76cb2f487dd980"
+        sha256 "dc641173cbda29ba48580cdde3f80f7a734f3b558a25e5950a4b19f522678c70"
       end
     end
 
     if Hardware::CPU.arm?
       if build.with? "linux-piv-pkcs11"
         url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-pivkey-pkcs11key-arm64"
-        sha256 "dbcbfd2b2d667ac880709f61d105c5b331a8f73657bcd08c964d191f7bfb62ca"
+        sha256 "1b4b7ad0d608eccb5aab463a9e83f95186132868aa4078d21dc9c6b88eeab73b"
       else
         url "https://github.com/sigstore/cosign/releases/download/v#{version}/cosign-linux-arm64"
-        sha256 "4a8cd49518cc667bb16e6aaf9da291b647c38baffa462fd495043ae6762f6981"
+        sha256 "517e96f9d036c4b77db01132cacdbef21e4266e9ad3a93e67773c590ba54e26f"
       end
     end
   end
