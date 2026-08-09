@@ -8,7 +8,7 @@ class Sget < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", tag: "v1.13.1"
 
-  deprecate! date: "2023-04-07", because: :deprecated_upstream
+  disable! date: "2026-08-09", because: :deprecated_upstream
 
   if Hardware::CPU.intel?
     url "https://github.com/sigstore/cosign/releases/download/v#{version}/sget-darwin-amd64"

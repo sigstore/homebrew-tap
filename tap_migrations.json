@@ -1,0 +1,6 @@
+{
+  "cosign": "homebrew/core",
+  "gitsign": "homebrew/core",
+  "gitsign-credential-cache": "homebrew/core/gitsign",
+  "rekor-cli": "homebrew/core"
+}

@@ -1,28 +1,35 @@
 # homebrew-tap for Sigstore
 
+> [!IMPORTANT]
+> **This tap is no longer maintained.**
+>
+> The Sigstore formulae have been migrated to
+> [homebrew/core](https://github.com/Homebrew/homebrew-core), so you no longer
+> need this tap. Existing installs of `sigstore/tap/<formula>` are automatically
+> redirected to their `homebrew/core` equivalents.
+
 ## Installation
 
-```
-brew tap sigstore/tap
-brew install <FORMULA>
-```
-
-or
+Install directly from `homebrew/core` (no `brew tap` required):
 
 ```
-brew install sigstore/tap/<formula>
+brew install cosign
+brew install gitsign
+brew install rekor-cli
 ```
+
+`gitsign-credential-cache` is included with the `gitsign` formula.
 
 ## Formulae
 
-| Repository | Formula | Description |
-| ---------- | ------- | ----------- |
-| [cosign](https://github.com/sigstore/cosign)                    | [formula](Formula/cosign.rb)        | Container Signing, Verification and Storage in an OCI registry |
-| [gitsign](https://github.com/sigstore/gitsign)                  | [formula](Formula/gitsign.rb)       | Keyless Git signing using Sigstore |
-| [gitsign-credential-cache](https://github.com/sigstore/gitsign) | [formula](Formula/gitsign.rb)       | Keyless Git signing using Sigstore Credential Cache |
-| [policy-tester](https://github.com/sigstore/policy-controller)  | [formula](Formula/policy-tester.rb) | CLI for validating an image against a ClusterImagePolicy |
-| [rekor-cli](https://github.com/sigstore/rekor)                  | [formula](Formula/rekor-cli.rb)     | Secure Supply Chain - Transparency Log |
-| [sget](https://github.com/sigstore/cosign)                      | [formula](Formula/sget.rb)          | Automatic verification of signatures and integration with our binary transparency log, Rekor. |
+| Formula | Status | Replacement |
+| ------- | ------ | ----------- |
+| [cosign](https://github.com/sigstore/cosign)                    | Migrated  | `brew install cosign` (homebrew/core) |
+| [gitsign](https://github.com/sigstore/gitsign)                  | Migrated  | `brew install gitsign` (homebrew/core) |
+| gitsign-credential-cache                                        | Migrated  | Ships with `brew install gitsign` (homebrew/core) |
+| [rekor-cli](https://github.com/sigstore/rekor)                  | Migrated  | `brew install rekor-cli` (homebrew/core) |
+| [policy-tester](https://github.com/sigstore/policy-controller)  | Disabled  | No `homebrew/core` equivalent |
+| [sget](https://github.com/sigstore/cosign)                      | Disabled  | Discontinued upstream |
 
 ## Documentation
 

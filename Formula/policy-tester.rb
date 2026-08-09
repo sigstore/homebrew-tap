@@ -8,6 +8,8 @@ class PolicyTester < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/policy-controller.git", tag: "v0.7.0"
 
+  disable! date: "2026-08-09", because: :unmaintained
+
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/sigstore/policy-controller/releases/download/v#{version}/tester-darwin-amd64"
